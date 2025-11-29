@@ -1,0 +1,217 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Tahoma, sans-serif;
+    background: #f2f2f2;
+}
+
+/* ============================ */
+/* Global Image Normalization   */
+/* ============================ */
+.memory-game-blocks .game-block img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* ============================ */
+/* Overlay start button         */
+/* ============================ */
+.control-buttons {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.control-buttons span {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    background-color: #f44336;
+    padding: 15px 25px;
+    font-size: 30px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+/* ============================ */
+/* Information Bar              */
+/* ============================ */
+.info-container {
+    position: fixed;
+    left: 10px;
+    top: 10px;
+    height: 98%;                /* بالطول */
+    width: 200px;                /* عرض الشريط اللي على الشمال */
+    background-color: #fff;
+    padding: 20px;
+    font-size: 20px;
+    border: 2px solid #2196f3;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;      /* ترتيب العناصر تحت بعض */
+    justify-content: space-between; /* يبدأ من فوق */
+    gap: 20px;                   /* مسافات بين العناصر */
+}
+
+
+/* ============================ */
+/* Game board                   */
+/* ============================ */
+.memory-game-blocks {
+    width: 900px;
+    margin: 20px auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 15px;
+    perspective: 1000px;
+}
+
+.memory-game-blocks.no-clicking {
+    pointer-events: none;
+}
+
+/* ============================ */
+/* Game block                   */
+/* ============================ */
+.memory-game-blocks .game-block {
+    width: 150px;
+    height: 165px;
+    position: relative;
+    transition: 0.5s;
+    transform-style: preserve-3d;
+    cursor: pointer;
+}
+
+.memory-game-blocks .game-block .face {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 10px;
+    border: 3px solid #2196f3;
+}
+
+/* Front face */
+.memory-game-blocks .game-block .front {
+    background-color: #333;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.memory-game-blocks .game-block .front::before {
+    content: '?';
+    color: white;
+    font-size: 120px;
+    font-weight: bold;
+}
+
+/* Back face */
+.memory-game-blocks .game-block .back {
+    transform: rotateY(180deg);
+    background-color: #eee;
+    overflow: hidden;
+}
+
+/* Flip animation */
+.memory-game-blocks .game-block.is-flipped,
+.memory-game-blocks .game-block.has-match {
+    transform: rotateY(180deg);
+}
+
+
+/* Win Screen */
+.win-screen {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.85);
+    z-index: 999;
+    display: none;
+    align-items: center;
+    justify-content: center;
+}
+
+.win-screen .win-box {
+    background: #fff;
+    padding: 40px 60px;
+    border-radius: 20px;
+    text-align: center;
+    animation: pop 0.6s ease;
+}
+
+.win-screen button {
+    padding: 10px 20px;
+    margin-top: 20px;
+    font-size: 20px;
+    background: #2196f3;
+    border: none;
+    color: white;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+/* Pop Animation */
+@keyframes pop {
+    0% { transform: scale(0); }
+    100% { transform: scale(1); }
+}
+
+/* Match Animation */
+.has-match {
+    animation: matchPulse 0.4s ease-in-out;
+}
+
+@keyframes matchPulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.2); }
+    100% { transform: scale(1); }
+}
+
+.game-over-screen {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+.game-over-box {
+    background: rgb(0, 0, 0);
+    padding: 30px 50px;
+    border-radius: 15px;
+    text-align: center;
+    font-size: 24px;
+    border: 3px solid #f44336;
+    color: #f44336;
+}
+
+#playAgainBtn {
+    margin-top: 20px;
+    padding: 10px 25px;
+    font-size: 20px;
+    border: none;
+    background: #f44336;
+    color: white;
+    border-radius: 10px;
+    cursor: pointer;
+}

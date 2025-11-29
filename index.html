@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Memory Game</title>
+    <link rel="shortcut icon" href="Images/OIP.Ico" type="image/x-icon">
+    <link rel="stylesheet" href="CSS/all.min.css">
+    <link rel="stylesheet" href="CSS/style.css">
+</head>
+<body>
+    <div class="control-buttons">
+        <span>Start Game</span>
+    </div>
+    <div class="info-container">
+        <div class="name">
+            Hello: <span></span>
+
+        </div>
+        <div class="tries">
+            Wrong Tries: <span></span>
+        </div>
+        <div class="timer">
+            Time: <span id="timerCount">0</span>s
+        </div>
+    </div>
+    <div class="memory-game-blocks">
+        <div class="game-block" data-animals = "cow">
+            <div class="face front"></div>
+            <div class="face back">
+                <img src="Images/cow.jpg" alt="cow">
+            </div>
+        </div>
+        <div class="game-block" data-animals = "cow">
+            <div class="face front"></div>
+            <div class="face back">
+                <img src="Images/cow.jpg" alt="cow">
+            </div>
+        </div>
+        <div class="game-block" data-animals = "dog">
+            <div class="face front"></div>
+            <div class="face back">
+                <img src="Images/dog.jpg" alt="dog">
+            </div>
+        </div>
+        <div class="game-block" data-animals = "dog">
+            <div class="face front"></div>
+            <div class="face back">
+                <img src="Images/dog.jpg" alt="dog">
+            </div>
+        </div>
+        <div class="game-block" data-animals = "hippo">
+            <div class="face front"></div>
+            <div class="face back">
+                <img src="Images/hippo.jpg" alt="hippo">
+            </div>
+        </div>
+        <div class="game-block" data-animals = "hippo">
+            <div class="face front"></div>
+            <div class="face back">
+                <img src="Images/hippo.jpg" alt="hippo">
+            </div>
+        </div>
+        <div class="game-block" data-animals = "cat">
+            <div class="face front"></div>
+            <div class="face back">
+                <img src="Images/cat.jpg" alt="cat">
+            </div>
+        </div>
+        <div class="game-block" data-animals = "cat">
+            <div class="face front"></div>
+            <div class="face back">
+                <img src="Images/cat.jpg" alt="cat">
+            </div>
+        </div>
+        <div class="game-block" data-animals = "fish">
+            <div class="face front"></div>
+            <div class="face back">
+                <img src="Images/fish.jpg" alt="fish">
+            </div>
+        </div>
+        <div class="game-block" data-animals = "fish">
+            <div class="face front"></div>
+            <div class="face back">
+                <img src="Images/fish.jpg" alt="fish">
+            </div>
+        </div>
+        <div class="game-block" data-animals = "horse">
+            <div class="face front"></div>
+            <div class="face back">
+                <img src="Images/horse.jpg" alt="horse">
+            </div>
+        </div>
+        <div class="game-block" data-animals = "horse">
+            <div class="face front"></div>
+            <div class="face back">
+                <img src="Images/horse.jpg" alt="horse">
+            </div>
+        </div>
+        <div class="game-block" data-animals = "spider">
+            <div class="face front"></div>
+            <div class="face back">
+                <img src="Images/spider.jpg" alt="spider">
+            </div>
+        </div>
+        <div class="game-block" data-animals = "spider">
+            <div class="face front"></div>
+            <div class="face back">
+                <img src="Images/spider.jpg" alt="spider">
+            </div>
+        </div>
+        <div class="game-block" data-animals = "dragon">
+            <div class="face front"></div>
+            <div class="face back">
+                <img src="Images/dragon.jpg" alt="dragon">
+            </div>
+        </div>
+        <div class="game-block" data-animals = "dragon">
+            <div class="face front"></div>
+            <div class="face back">
+                <img src="Images/dragon.jpg" alt="dragon">
+            </div>
+        </div>
+        <div class="game-block" data-animals = "eagle">
+            <div class="face front"></div>
+            <div class="face back">
+                <img src="Images/eagle.jpg" alt="">
+            </div>
+        </div>
+        <div class="game-block" data-animals = "eagle">
+            <div class="face front"></div>
+            <div class="face back">
+                <img src="Images/eagle.jpg" alt="">
+            </div>
+        </div>
+        <div class="game-block" data-animals = "lion">
+            <div class="face front"></div>
+            <div class="face back">
+                <img src="Images/lion.jpg" alt="lion">
+            </div>
+        </div>
+        <div class="game-block" data-animals = "lion">
+            <div class="face front"></div>
+            <div class="face back">
+                <img src="Images/lion.jpg" alt="lion">
+            </div>
+        </div>
+    </div>
+
+    <!-- Success + Fail Sounds -->
+    <audio id="success" src="sounds/success-340660.mp3" preload="auto"></audio>
+    <audio id="fail" src="sounds/fail-234710.mp3"preload="auto" ></audio>
+    <audio id="start" src="sounds/game_start_sound.wav"preload="auto" ></audio>
+    <audio id="end" src="sounds/game-over-deep-male-voice-clip-352695.mp3"preload="auto" ></audio>
+
+    <!-- Win Screen -->
+    <div class="win-screen" id="winScreen">
+        <div class="win-box">
+            <h1>🎉 Congratulations! 🎉</h1>
+            <p>You finished the game!</p>
+            <button type="button" onclick="location.reload()">Play Again</button>
+        </div>
+    </div>
+
+    <script src="js/main.js"></script>
+
+</body>
+</html>
